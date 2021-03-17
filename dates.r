@@ -45,8 +45,11 @@ date <- date %>%
              Month = month.abb[date$month],
              Week = paste(lubridate::isoweek(date$Date), sep = ""),
              Day = weekdays(date$Date, abbreviate = TRUE),
-             before = "Date")
+             .after = "Date")
 
 # Drop the numeric month and day variables and the duplicated year:
 date <- select(date, select = -c(year, month, day))
+
+# Save output in a .csv file:
+write.csv(date, "date_output.csv")
 
