@@ -191,4 +191,4 @@ ggplot(data = Monthly_Averages, aes(factor(x= Trading_Month,levels = month.name,
   ylab("Monthly_Avg Price") +
   theme_minimal()
 
-# End
+# Ended
